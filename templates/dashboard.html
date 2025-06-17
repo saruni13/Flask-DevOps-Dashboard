@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>DevOps Dashboard</title></head>
+<body>
+<h1> DevOps Dashboard</h1>
+
+<h2> System Info</h2>
+<ul>
+  <li>CPU Usage: {{ sys_info.cpu }}%</li>
+  <li>Memory Usage: {{ sys_info.mem }}%</li>
+  <li>Disk Usage: {{ sys_info.disk }}%</li>
+</ul>
+
+<h2>🔧 GitHub Repo</h2>
+<ul>
+  <li>Last Commit: {{ git_info.last_commit }}</li>
+  <li>Commit Hash: {{ git_info.commit }}</li>
+</ul>
+
+<h2> Recent Logs</h2>
+<pre>{{ logs|join('\n') }}</pre>
+
+<h2>⏱ App Uptime</h2>
+<p>{{ uptime | round(2) }} seconds</p>
+</body>
+</html>
